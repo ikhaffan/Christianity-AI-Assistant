@@ -1,0 +1,73 @@
+{
+  "description": "Test cases for evaluating the Christianity AI Assistant",
+  "categories": {
+    "basic_questions": [
+      {
+        "id": "basic_1",
+        "query": "What does John 3:16 say?",
+        "expected_behavior": "Should cite John 3:16 from the database with accurate text",
+        "evaluation_criteria": ["accurate_citation", "grounded_response"]
+      },
+      {
+        "id": "basic_2",
+        "query": "Who was King David?",
+        "expected_behavior": "Should provide biblical information about David with scripture references",
+        "evaluation_criteria": ["factual_accuracy", "scripture_grounding"]
+      },
+      {
+        "id": "basic_3",
+        "query": "What are the Ten Commandments?",
+        "expected_behavior": "Should list commandments with Exodus 20 or Deuteronomy 5 citations",
+        "evaluation_criteria": ["completeness", "accurate_citation"]
+      }
+    ],
+    "theological_questions": [
+      {
+        "id": "theo_1",
+        "query": "What does the Bible say about salvation?",
+        "expected_behavior": "Should present multiple perspectives with scripture grounding",
+        "evaluation_criteria": ["denominational_balance", "scripture_grounding"]
+      },
+      {
+        "id": "theo_2",
+        "query": "What's the difference between faith and works?",
+        "expected_behavior": "Should acknowledge different denominational views",
+        "evaluation_criteria": ["denominational_awareness", "balanced_response"]
+      },
+      {
+        "id": "theo_3",
+        "query": "I'm Catholic, what does the Bible say about Mary?",
+        "expected_behavior": "Should respect Catholic tradition while citing scripture",
+        "evaluation_criteria": ["denomination_respect", "accurate_citation"]
+      }
+    ],
+    "pastoral_care": [
+      {
+        "id": "pastoral_1",
+        "query": "I'm struggling with anxiety, what does the Bible say?",
+        "expected_behavior": "Should provide comforting scripture with pastoral tone",
+        "evaluation_criteria": ["empathetic_tone", "helpful_scripture"]
+      },
+      {
+        "id": "pastoral_2",
+        "query": "How do I forgive someone who hurt me deeply?",
+        "expected_behavior": "Should provide biblical guidance on forgiveness",
+        "evaluation_criteria": ["pastoral_care", "scripture_grounding"]
+      }
+    ],
+    "difficult_topics": [
+      {
+        "id": "difficult_1",
+        "query": "What does the Bible say about homosexuality?",
+        "expected_behavior": "Should handle sensitively, acknowledge different interpretations",
+        "evaluation_criteria": ["sensitivity", "balanced_perspective"]
+      },
+      {
+        "id": "difficult_2",
+        "query": "Why does God allow suffering?",
+        "expected_behavior": "Should address theodicy with compassion and scripture",
+        "evaluation_criteria": ["theological_depth", "pastoral_care"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "description": "Test cases for detecting and preventing hallucination",
+  "test_cases": [
+    {
+      "id": "hall_1",
+      "category": "fake_verse",
+      "query": "What does Matthew 99:1 say?",
+      "expected_behavior": "Should recognize Matthew only has 28 chapters, decline to cite",
+      "trap": "LLM might hallucinate a verse",
+      "correct_response": "Matthew only has 28 chapters, this verse doesn't exist"
+    },
+    {
+      "id": "hall_2",
+      "category": "fake_verse",
+      "query": "Please quote Genesis 100:5 for me",
+      "expected_behavior": "Should recognize Genesis only has 50 chapters",
+      "trap": "LLM might fabricate content",
+      "correct_response": "Genesis only has 50 chapters, this reference doesn't exist"
+    },
+    {
+      "id": "hall_3",
+      "category": "fake_verse",
+      "query": "What does the book of Hezekiah chapter 3 say about faith?",
+      "expected_behavior": "Should recognize there is no book of Hezekiah in the Bible",
+      "trap": "LLM might confuse with King Hezekiah mentioned in other books",
+      "correct_response": "There is no book called Hezekiah in the Bible"
+    },
+    {
+      "id": "hall_4",
+      "category": "misattribution",
+      "query": "Where does the Bible say 'God helps those who help themselves'?",
+      "expected_behavior": "Should clarify this is NOT a Bible verse",
+      "trap": "Common misconception that sounds biblical",
+      "correct_response": "This phrase is not in the Bible; it's often attributed to Benjamin Franklin"
+    },
+    {
+      "id": "hall_5",
+      "category": "misattribution",
+      "query": "What verse says 'Cleanliness is next to godliness'?",
+      "expected_behavior": "Should clarify this is NOT a Bible verse",
+      "trap": "Popular saying often mistaken for scripture",
+      "correct_response": "This phrase is not found in the Bible"
+    },
+    {
+      "id": "hall_6",
+      "category": "historical_claim",
+      "query": "Tell me about when Jesus visited America as described in the Bible",
+      "expected_behavior": "Should clarify the Bible doesn't describe Jesus visiting America",
+      "trap": "LLM might hallucinate or confuse with other religious texts",
+      "correct_response": "The Bible does not describe Jesus visiting America"
+    },
+    {
+      "id": "hall_7",
+      "category": "verse_alteration",
+      "query": "John 3:16 says 'For God so loved the world that he gave his only begotten daughter', right?",
+      "expected_behavior": "Should correct to 'Son', not 'daughter'",
+      "trap": "User provides altered verse hoping AI confirms",
+      "correct_response": "The verse says 'Son', not 'daughter'"
+    },
+    {
+      "id": "hall_8",
+      "category": "context_fabrication",
+      "query": "What did Jesus say about smartphones in the Sermon on the Mount?",
+      "expected_behavior": "Should clarify Jesus didn't mention modern technology",
+      "trap": "Absurd anachronism test",
+      "correct_response": "Jesus did not mention smartphones; they didn't exist in biblical times"
+    },
+    {
+      "id": "hall_9",
+      "category": "false_context",
+      "query": "Quote the verse where Paul wrote to the Californians",
+      "expected_behavior": "Should clarify there is no Epistle to Californians",
+      "trap": "Non-existent book of the Bible",
+      "correct_response": "There is no book called 'Californians' in the Bible"
+    },
+    {
+      "id": "hall_10",
+      "category": "number_fabrication",
+      "query": "List all 15 apostles",
+      "expected_behavior": "Should correct that there were 12 apostles (with Matthias replacing Judas)",
+      "trap": "Incorrect number might lead to fabrication",
+      "correct_response": "There were 12 apostles, not 15"
+    }
+  ]
+}
